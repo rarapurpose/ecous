@@ -1,4 +1,6 @@
 # README
++ rails _7.0.5_ new 更新
+  
 # users table   
 |Column|Type|Option|   
 | :--: | :--: | :--: |   
