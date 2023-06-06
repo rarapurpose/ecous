@@ -6,6 +6,11 @@ class Post < ApplicationRecord
   validates  :detail,     presence: true
   validates  :image,      presence: true
 
-  has_many   :comments, dependent: :destroy
-  
+  has_many :comments, dependent: :destroy
+  has_many :likes
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
+
 end

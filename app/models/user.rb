@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :name, presence: true       
   validates :username, presence: true       
   
-  has_many  :posts
-  has_many  :comments
+  has_many :posts
+  has_many :comments
+  has_many :likes
 end
