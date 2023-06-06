@@ -4,12 +4,13 @@
       <p class="post__hedding">
         <%= @post.title %>
       </p>
-
       <%= link_to "by #{@post.user.name}", user_path(@post.user.id), class: :post__user %>
+       <% if user_signed_in? && current_user.id == @post.user_id %>
         <div class="post__manage">
           <%= link_to "編集", edit_post_path(@post.id), class: :post__btn %>
           <%= link_to "削除", post_path(@post.id), method: :delete, class: :post__btn %>
         </div>
+       <% end %>
 
       <div class="post__image">
         <%= image_tag(@post.image, class: :card__img) %>
@@ -20,6 +21,7 @@
           <p class="post__message">
             <%= @post.detail %>
           </p>
-      
+      </div>    
+        </div>      
   </div>
 </main>
