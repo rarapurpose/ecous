@@ -9,9 +9,9 @@
     </p>
   <div class="post">  
     <div class="post-name">
-     <%= link_to  "by #{post.user.name}", user_path(post.user)%>
+     <%#= link_to "by #{post.user.name}", user_path(post.user)%>
     </div>
-    <div id="like-btn<%= post.id %>">    
+    <div id="like-btn <%= post.id %>">    
      <%= render partial: "likes/like", locals: { post: post } %>
     </div>
   </div>
